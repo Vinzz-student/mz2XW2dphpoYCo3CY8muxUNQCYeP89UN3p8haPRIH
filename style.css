@@ -1,0 +1,471 @@
+/* Reset dan base styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background: linear-gradient(135deg, #ffffff 0%, #000000 100%);
+    color: #444;
+    min-height: 100vh;
+    overflow-x: hidden;
+    position: relative;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+    position: relative;
+    z-index: 1;
+}
+
+/* Animasi elemen mengambang */
+.floating-elements {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 0;
+    overflow: hidden;
+}
+
+.floating {
+    position: absolute;
+    font-size: 2rem;
+    opacity: 0.7;
+    animation: floating 15s infinite linear;
+}
+
+.balloon1 { top: 10%; left: 5%; animation-delay: 0s; animation-duration: 25s; }
+.balloon2 { top: 20%; right: 10%; animation-delay: 2s; animation-duration: 20s; }
+.balloon3 { bottom: 15%; left: 15%; animation-delay: 4s; animation-duration: 22s; }
+.balloon4 { bottom: 25%; right: 5%; animation-delay: 6s; animation-duration: 18s; }
+.star1 { top: 15%; left: 20%; animation-delay: 1s; animation-duration: 30s; font-size: 1.5rem; }
+.star2 { top: 40%; right: 20%; animation-delay: 3s; animation-duration: 28s; font-size: 1.8rem; }
+.star3 { bottom: 40%; left: 30%; animation-delay: 5s; animation-duration: 32s; font-size: 1.3rem; }
+.heart1 { top: 60%; left: 10%; animation-delay: 7s; animation-duration: 24s; font-size: 2.2rem; }
+.heart2 { top: 30%; right: 30%; animation-delay: 9s; animation-duration: 26s; font-size: 1.7rem; }
+.confetti1 { top: 50%; left: 50%; animation-delay: 11s; animation-duration: 21s; }
+.confetti2 { bottom: 10%; right: 20%; animation-delay: 13s; animation-duration: 23s; }
+
+@keyframes floating {
+    0% {
+        transform: translateY(0px) rotate(0deg);
+    }
+    25% {
+        transform: translateY(-20px) rotate(5deg);
+    }
+    50% {
+        transform: translateY(-40px) rotate(0deg);
+    }
+    75% {
+        transform: translateY(-20px) rotate(-5deg);
+    }
+    100% {
+        transform: translateY(0px) rotate(0deg);
+    }
+}
+
+/* Header styles */
+.header {
+    text-align: center;
+    padding: 30px 20px;
+    margin-bottom: 30px;
+    background: rgba(145, 145, 145, 0.26);
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.title {
+    font-family: 'Dancing Script', cursive;
+    font-size: 3.5rem;
+    color: #770000;
+    margin-bottom: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.title-text {
+    margin-bottom: 10px;
+}
+
+.title-emoji {
+    font-size: 2.5rem;
+}
+
+.subtitle {
+    font-size: 1.2rem;
+    color: #a30000;
+    margin-bottom: 30px;
+}
+
+/* Lilin animasi */
+.candle-container {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    margin-top: 30px;
+}
+
+.candle {
+    width: 30px;
+    height: 100px;
+    position: relative;
+}
+
+.candle-body {
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to right, #ff00089f, #ff7e7e);
+    border-radius: 10px;
+    box-shadow: inset 0 -10px 20px rgba(0, 0, 0, 0.1);
+}
+
+.flame {
+    position: absolute;
+    top: -25px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 20px;
+    height: 40px;
+    background: linear-gradient(to bottom, #fbff00ab, #ff9d00);
+    border-radius: 50% 50% 20% 20%;
+    animation: flicker 1.5s infinite alternate;
+    box-shadow: 0 0 20px #ff3c00, 0 0 40px #ff9d00;
+}
+
+@keyframes flicker {
+    0%, 100% {
+        transform: translateX(-50%) scale(1);
+        height: 40px;
+    }
+    50% {
+        transform: translateX(-50%) scale(1.05);
+        height: 45px;
+    }
+}
+
+/* Card styles */
+.main-content {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 25px;
+    margin-bottom: 40px;
+}
+
+.message-card, .countdown-card, .surprise-card, .marquee-card, .personal-message-card {
+    background: rgba(255, 255, 255, 0.404);
+    border-radius: 18px;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.06);
+    overflow: hidden;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.message-card:hover, .countdown-card:hover, .surprise-card:hover, .marquee-card:hover, .personal-message-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+}
+
+.card-header {
+    background: linear-gradient(135deg, #ff0000 0%, #420000 100%);
+    color: rgb(211, 211, 211);
+    padding: 20px;
+    text-align: center;
+}
+
+.card-header h2 {
+    font-size: 1.5rem;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+
+.card-body {
+    padding: 25px;
+}
+
+.message {
+    font-size: 1.1rem;
+    line-height: 1.6;
+    margin-bottom: 15px;
+    color: #555;
+}
+
+.signature {
+    margin-top: 25px;
+    text-align: right;
+    font-style: italic;
+    color: #b62d2d;
+    font-weight: 500;
+}
+
+.signature span {
+    font-weight: 600;
+}
+
+/* Button styles */
+.btn {
+    padding: 14px 24px;
+    border: none;
+    border-radius: 50px;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 600;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+
+.surprise-btn {
+    background: linear-gradient(to right, #fa1919, #ff7575);
+    color: white;
+    box-shadow: 0 5px 15px rgba(255, 0, 0, 0.76);
+}
+
+.surprise-btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px #fa1919;
+}
+
+.surprise-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    justify-content: center;
+    margin: 20px 0;
+}
+
+.send-btn {
+    background: linear-gradient(to right, #ff9a9e, #fecfef);
+    color: white;
+    box-shadow: 0 5px 15px rgba(255, 154, 158, 0.3);
+    margin-top: 15px;
+    width: 100%;
+}
+
+.send-btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(255, 154, 158, 0.4);
+}
+
+/* Surprise result */
+.surprise-result {
+    background: rgba(138, 75, 175, 0.05);
+    border-radius: 12px;
+    padding: 20px;
+    margin-top: 20px;
+    text-align: center;
+    min-height: 80px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-left: 4px solid #e44818;
+}
+
+#wish-text {
+    font-size: 1.2rem;
+    color: #ff3705;
+    font-weight: 500;
+}
+
+/* Marquee styles */
+.marquee-container {
+    overflow: hidden;
+    position: relative;
+    background: rgba(8, 0, 0, 0.452);
+    border-radius: 12px;
+    padding: 15px;
+}
+
+.marquee-text {
+    display: inline-block;
+    white-space: nowrap;
+    animation: marquee 25s linear infinite;
+    font-size: 1.2rem;
+    color: #fdfaff;
+    padding-left: 100%;
+}
+
+@keyframes marquee {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(-100%);
+    }
+}
+
+/* Personal message styles */
+.message-input textarea {
+    width: 100%;
+    height: 120px;
+    padding: 15px;
+    border-radius: 12px;
+    border: 2px solid #e0e0e0;
+    font-family: 'Poppins', sans-serif;
+    font-size: 1rem;
+    resize: none;
+    margin-bottom: 15px;
+    transition: border-color 0.3s ease;
+}
+
+.message-input textarea:focus {
+    outline: none;
+    border-color: #8a4baf;
+}
+
+.messages-container h3 {
+    margin: 25px 0 15px;
+    color: #8a4baf;
+    font-size: 1.3rem;
+}
+
+.messages-list {
+    max-height: 300px;
+    overflow-y: auto;
+    padding-right: 10px;
+}
+
+.message-item {
+    background: rgba(138, 75, 175, 0.05);
+    border-radius: 12px;
+    padding: 15px;
+    margin-bottom: 15px;
+    border-left: 4px solid #c86dd7;
+}
+
+.message-content {
+    color: #555;
+    line-height: 1.5;
+    margin-bottom: 8px;
+}
+
+.message-author {
+    text-align: right;
+    color: #8a4baf;
+    font-weight: 500;
+    font-size: 0.9rem;
+}
+
+/* Footer styles */
+.footer {
+    text-align: center;
+    padding: 25px;
+    background: rgba(255, 255, 255, 0.411);
+    border-radius: 20px;
+    margin-top: 30px;
+    box-shadow: 0 -5px 20px rgba(0, 0, 0, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.footer-content p {
+    margin-bottom: 15px;
+    color: #000000;
+}
+
+.heart-beat {
+    color: #ff4757;
+    animation: heartbeat 1.5s infinite;
+}
+
+@keyframes heartbeat {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.2); }
+}
+
+.footer-note {
+    font-size: 0.9rem;
+    color: #888;
+}
+
+.footer-emojis {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin-top: 20px;
+    font-size: 1.8rem;
+    animation: bounce 2s infinite;
+}
+
+@keyframes bounce {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-10px); }
+}
+
+/* Canvas untuk konfeti */
+#confetti-canvas {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 9999;
+}
+
+/* Responsiveness */
+@media (max-width: 768px) {
+    .title {
+        font-size: 2.8rem;
+    }
+    
+    .title-emoji {
+        font-size: 2rem;
+    }
+    
+    .main-content {
+        grid-template-columns: 1fr;
+    }
+    
+    .countdown-number {
+        font-size: 2.2rem;
+        width: 70px;
+        height: 70px;
+    }
+    
+    .surprise-buttons {
+        flex-direction: column;
+    }
+    
+    .candle-container {
+        gap: 20px;
+    }
+    
+    .candle {
+        width: 25px;
+        height: 80px;
+    }
+}
+
+@media (max-width: 480px) {
+    .title {
+        font-size: 2.2rem;
+    }
+    
+    .subtitle {
+        font-size: 1rem;
+    }
+    
+    .countdown-container {
+        flex-wrap: wrap;
+    }
+    
+    .countdown-item {
+        width: 45%;
+        margin-bottom: 15px;
+    }
+}

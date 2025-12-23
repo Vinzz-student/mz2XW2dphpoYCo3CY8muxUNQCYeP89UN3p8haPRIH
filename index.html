@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Selamat Ulang Tahun!</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Dancing+Script:wght@700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Background animasi -->
+        <div class="floating-elements">
+            <div class="floating balloon1">🎈</div>
+            <div class="floating balloon2">🎈</div>
+            <div class="floating balloon3">🎈</div>
+            <div class="floating balloon4">🎈</div>
+            <div class="floating star1">⭐</div>
+            <div class="floating star2">⭐</div>
+            <div class="floating star3">⭐</div>
+            <div class="floating heart1">❤️</div>
+            <div class="floating heart2">❤️</div>
+            <div class="floating confetti1">🎉</div>
+            <div class="floating confetti2">🎉</div>
+        </div>
+
+        <!-- Header dengan animasi -->
+        <header class="header animate__animated animate__bounceIn">
+            <h1 class="title">
+                <span class="title-text">Selamat Ulang Tahun!</span>
+                <span class="title-emoji">🎂🎉🥳</span>
+            </h1>
+            <p class="subtitle">Hari ini, tanggal 24 Desember</p>
+            <div class="candle-container">
+                <div class="candle">
+                    <div class="flame"></div>
+                    <div class="candle-body"></div>
+                </div>
+                <div class="candle">
+                    <div class="flame"></div>
+                    <div class="candle-body"></div>
+                </div>
+                <div class="candle">
+                    <div class="flame"></div>
+                    <div class="candle-body"></div>
+                </div>
+            </div>
+        </header>
+
+        <!-- Konten utama -->
+        <main class="main-content">
+            <!-- Pesan ucapan -->
+            <section class="message-card animate__animated animate__fadeInUp">
+                <div class="card-header">
+                    <h2><i class="fas fa-birthday-cake"></i> Ucapan Spesial</h2>
+                </div>
+                <div class="card-body">
+                    <p class="message">Hbd ikann, semogaa panjang umur, sehat selalu, semua impiannya di tahun ini tercapai, semogaa di tahun ini kamu dapet semua kebahagiaan yang pantes kamuu dapetin, aku cuma mau bilang makasiii udah jadi bagian dari hidupku dulu, makasii buat semuanya, pokok makasiii banyak banyakk, aku gak pernah nyesel dulu kita ketemu, semogaa kamu menemukan seseorang yang bisa mengerti dan menerima kamuu apa adanya, insyaAllah ultah mu tahun depan tak ingett, intinyaa makasiii, once again, happy birthdayy</p>
+                    <div class="signature">Dengan penuh kasih,<br><span>Dari nindyaa</span></div>
+                </div>
+            </section>
+
+            <!-- Fitur kejutan interaktif -->
+            <section class="surprise-card animate__animated animate__fadeInUp">
+                <div class="card-header">
+                    <h2><i class="fas fa-gift"></i> Kejutan Spesial</h2>
+                </div>
+                <div class="card-body">
+                    <div class="surprise-buttons">
+                        <button class="btn surprise-btn" id="confetti-btn">
+                            <i class="fas fa-birthday-cake"></i> Tunjukkan Konfeti!
+                        </button>
+                        <button class="btn surprise-btn" id="wish-btn">
+                            <i class="fas fa-star"></i> Dapatkan Ucapan Kejutan
+                        </button>
+                        <button class="btn surprise-btn" id="balloon-btn">
+                            <i class="fas fa-air-freshener"></i> Tiup Balon
+                        </button>
+                    </div>
+                    <div class="surprise-result" id="surprise-result">
+                        <p id="wish-text"></p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Fitur pesan berjalan -->
+            <section class="marquee-card animate__animated animate__fadeInUp">
+                <div class="card-header">
+                    <h2><i class="fas fa-scroll"></i> Pesan Berjalan</h2>
+                </div>
+                <div class="card-body">
+                    <div class="marquee-container">
+                        <div class="marquee-text">
+                            Hbd ikann Hbd ikan Hbd ikann Hbd ikann Hbd ikann
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+        <!-- Footer --> 
+        <footer class="footer animate__animated animate__fadeIn">
+            <div class="footer-content">
+                <p>Dibuat dengan <i class="fas fa-heart heart-beat"></i> untuk merayakan hari spesial</p>
+                <p class="footer-note"> 2025 Ulang Tahun Spesial • Semua yang terbaik untukmu!</p>
+                <div class="footer-emojis">
+                    <span>🎂</span>
+                    <span>🎁</span>
+                    <span>🎈</span>
+                    <span>🥳</span>
+                    <span>✨</span>
+                </div>
+            </div>
+        </footer>
+    </div>
+
+    <!-- Canvas untuk konfeti -->
+    <canvas id="confetti-canvas"></canvas>
+
+    <!-- Script -->
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.5.1/dist/confetti.browser.min.js"></script>
+    <script src="konfeti.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
